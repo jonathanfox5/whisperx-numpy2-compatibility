@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "whisperx-numpy2-compatibility"
+version = "0.1.0"
+description = "A compatibility fix to allow whisperx to work with other packages that require numpy>2. Should no longer be required once pull requests on the main package are accepted."
+authors = ["Jonathan Fox", "Max Bain"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+torch = ">=2"
+torchaudio = ">=2"
+faster-whisper = "^1.0.3"
+transformers = "*"
+pandas = "*"
+nltk = "*"
+pyannote-audio = "^3.3.2"
+llvmlite = "^0.43.0"
+torchmetrics = "^1.5.2"
+numba = "^0.60.0"
+
+[tool.poetry.scripts]
+whisperx = "whisperx_numpy2_compatibility.transcribe:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
